@@ -5,23 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>WebApp Dashboard</title>
 
+    <link rel="stylesheet" href="css/micromodal.css">
+    <link rel="stylesheet" href="css/slick.css">
     <link rel="stylesheet" href="css/styles.css">
   </head>
   <body>
     <div class="wrapper">
       <header class="header">
-
+        <button data-micromodal-trigger="modal-1">Button</button>
+        <button class="test-slick">Get Slick</button>
       </header>
 
-
-
       <main class="main">
+        <h1 class="main-heading">Awesome Startup Employee Directory</h1>
         <div id="employeeDirectory"></div>
       </main>
     </div>
 
+    <div class="modal micromodal-slide" id="modal-1" aria-hidden="true">
+      <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+        <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
+          <header class="modal__header">
+            <button class="modal__close" aria-label="Close modal" data-micromodal-close></button>
+          </header>
+          <main class="modal__content" id="modal-1-content">
+
+          </main>
+        </div>
+      </div>
+    </div>
+
     <script src="js/jquery-1.9.1.min.js" charset="utf-8"></script>
-    <script src="js/jquery.lightbox-0.5.min.js" charset="utf-8"></script>
+    <script src="js/micromodal.min.js" charset="utf-8"></script>
+    <script src="js/slick.min.js" charset="utf-8"></script>
     <script src="js/scripts.js" charset="utf-8"></script>
   </body>
 </html>
