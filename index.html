@@ -5,20 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>WebApp Dashboard</title>
 
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/micromodal.css">
     <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/slick-theme.css">
     <link rel="stylesheet" href="css/styles.css">
   </head>
   <body>
     <div class="wrapper">
       <header class="header">
-        <button data-micromodal-trigger="modal-1">Button</button>
-        <button class="test-slick">Get Slick</button>
+        <div class="header-wrap">
+          <h1 class="main-heading">Awesome Startup Employee Directory</h1>
+          <div class="header-wrap__filter">
+            Filter
+            <input id="employee_filter" type="text" name="employee_filter" value="" />
+          </div>
+        </div>
       </header>
 
       <main class="main">
-        <h1 class="main-heading">Awesome Startup Employee Directory</h1>
-        <input id="employee_filter" type="text" name="employee_filter" value="" />
         <div id="employeeDirectory"></div>
       </main>
     </div>
@@ -39,6 +45,6 @@
     <script src="js/jquery-1.9.1.min.js" charset="utf-8"></script>
     <script src="js/micromodal.min.js" charset="utf-8"></script>
     <script src="js/slick.min.js" charset="utf-8"></script>
-    <script src="js/scripts.js" charset="utf-8"></script>
+    <script src="js/scripts.js?ver=1" charset="utf-8"></script>
   </body>
 </html>
