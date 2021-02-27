@@ -1,6 +1,6 @@
 MicroModal.init();
 
-const requestParams = '?results=12&inc=picture,name,email,location,cell,dob';
+const requestParams = '?results=12&inc=picture,name,email,location,cell,dob&nat=us';
 const myRequest = new Request(`https://randomuser.me/api/${requestParams}`, {
   method: 'GET',
   dataType: 'json',
@@ -115,11 +115,30 @@ const processEmployeeData = (data) => {
   const employeeData = data.results;
   const employeeDirWrap = document.getElementById('employeeDirectory');
   const employeeModal = document.getElementById('modal-1-content');
+  const employeeFilter = document.getElementById('employee_filter');
 
   employeeDirWrap.appendChild(createEmployeeDirectory(employeeData));
   employeeModal.appendChild(createEmployeeCarousel(employeeData));
 
-  // $('.your-class').slick();
+  employeeFilter.addEventListener('keyup', function(e) {
+    const inputValue = this.value;
+    const filteredData = employeeData.filter(employee => {
+      const employeeName = `${employee.name.first} ${employee.name.last}`;
+      if (employeeName.toLowerCase().startsWith(inputValue.toLowerCase())) {
+        return true;
+      }
+    });
+
+    employeeDirWrap.innerHTML = '';
+    employeeModal.innerHTML = '';
+    if (this.value !== '') {
+      employeeDirWrap.appendChild(createEmployeeDirectory(filteredData));
+      employeeModal.appendChild(createEmployeeCarousel(filteredData));
+    } else {
+      employeeDirWrap.appendChild(createEmployeeDirectory(employeeData));
+      employeeModal.appendChild(createEmployeeCarousel(employeeData));
+    }
+  });
 }
 
 fetch(myRequest)
