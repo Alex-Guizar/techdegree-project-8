@@ -166,7 +166,7 @@ const processEmployeeData = (data) => {
     const inputValue = this.value;
     const filteredData = employeeData.filter(employee => {
       const employeeName = `${employee.name.first} ${employee.name.last}`;
-      if (employeeName.toLowerCase().startsWith(inputValue.toLowerCase())) {
+      if (employeeName.toLowerCase().includes(inputValue.toLowerCase())) {
         return true;
       }
     });
